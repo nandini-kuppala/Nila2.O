@@ -79,7 +79,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Ask "how much crying is normal" and check "ibuprofen".
   Commit: `Ask: sourced answers and a medicine check`
 
-- [ ] **8. The doctor's visit, written down**
+- [x] **8. The doctor's visit, written down**
   Becomes usable: Dictate, type or load a sample visit; see medicines, dates and advice; set reminders and download a calendar file.
   Why now: Independent; parser is testable.
   PRD ref: `prd.md > Doctor visit notes`
@@ -144,3 +144,5 @@ Activity mode:
 - Babyproof waits for the photo's load event instead of `img.decode()` — Chrome defers decoding in a hidden tab and the check hung on "Looking at the room…".
 - COCO-SSD on the learner's own test photos found a living room's TV, sofa and chairs but missed a gas stove; the threshold moved from 0.35 to 0.3 (the TV scored 0.36) and the screen now states what the model cannot see. Recorded in `spec.md > Decisions and Open Issues`.
 - Every Ask source link and the facts behind each answer were checked against the live NHS, AAP and NIH pages before writing (several guessed NHS addresses were 404s and were replaced with the real ones). The medicine list recognises common Indian brand names (Crocin, Dolo 650, Combiflam, Cetzine…) because the learner's users are in India.
+- The visit parser treats any sentence with "do not / don't / never / avoid / stop" as advice, never as a medicine — the first run turned "Do not give any cough syrup at this age" into a medicine to give. A regression test pins it.
+- Medicine reminders start from the next dose still ahead, so a 30-day course gets 30 reminders even when the visit ends after the morning dose; "Set reminders" also downloads an .ics file, because a browser cannot ring an alarm while it is closed. (The download itself was not clicked in the build browser; the .ics content is unit-tested.)
