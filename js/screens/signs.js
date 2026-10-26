@@ -38,8 +38,8 @@ async function home(root, keep) {
     <h2 class="h-section">Checks</h2>
     <div class="grid2">
       <button class="tile" data-diary><span class="badge sm tone-teal">${I('skin')}</span><span class="t">Skin diary</span><span class="s">Track a mark</span></button>
-      ${[['Nappy colour', 'Stool card', 'nappy', 'peach'], ['Eye flash', 'Red or white glow', 'eye', 'blue'], ['Yellow check', 'Newborn jaundice', 'sun', 'peach'], ['Food and reactions', 'Spot a pattern', 'fork', 'pink']].map(([t, sub, ic, tone]) => html`
-        <div class="tile soon" aria-disabled="true"><span class="badge sm tone-${tone}">${I(ic)}</span><span class="t">${t}</span><span class="s">${sub} · coming later</span></div>`)}
+      ${[['nappy', 'Nappy colour', 'Stool colour card', 'nappy', 'peach'], ['eye', 'Eye flash', 'Red or white glow', 'eye', 'blue'], ['yellow', 'Yellow check', 'Newborn jaundice', 'sun', 'peach'], ['food', 'Food and reactions', 'Spot a pattern', 'fork', 'pink']].map(([route, t, sub, ic, tone]) => html`
+        <a class="tile" href="#/${route}" style="color:var(--text)"><span class="badge sm tone-${tone}">${I(ic)}</span><span class="t">${t}</span><span class="s">${sub}</span></a>`)}
     </div>
     <h2 class="h-section" id="diary">Skin diary</h2>
     <p class="muted" style="margin-top:-4px">A photo every few days shows if a mark is spreading or settling.</p>

@@ -109,6 +109,16 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Open the live link on your phone.
   Commit: `README, licence and install manifest`
 
+- [x] **11. The rest of Little Signs: nappy colour, eye flash, yellow check, food and reactions**
+  Becomes usable: The four tiles that said "coming later" open working checks with sourced next steps and a history.
+  Why now: The learner asked for them after the first build.
+  PRD ref: `prd.md > Little Signs: four more checks`
+  Spec ref: `spec.md > Little Signs checks`, `spec.md > Data Model`
+  Build: little-signs.js rules with tests; checks.js screens; `checks` store; tiles become links.
+  Verify (mechanical): `npm test` (58 pass); in the browser the white-glow sample reads "show a doctor" and the red one "both eyes glow red"; a tapped yellow patch suggests "yellow or mustard"; "clay" reads "doctor today"; a 4-month-old with yellow skin reads "still yellow after 2 weeks", and a danger sign "get help now"; sample foods flag egg after hives within 2 hours; logging swelling shows the emergency card; no console errors in day or night mode.
+  Learner check: Open Health → Little Signs and try each tile; use the drawn eye samples and the food sample entries.
+  Commit: `Little Signs: nappy colour, eye flash, yellow check, food and reactions`
+
 ## Hands-on Checkpoints
 
 - [ ] Early usable behavior explored — after slice 2 (the learner runs the demo twice). Not done live: the learner asked the agent to build without pausing; the agent ran the demo twice in the build browser instead (white noise then humming, then humming first).
@@ -146,3 +156,5 @@ Activity mode: recap; `devpost/app-map.html` is the take-home map.
 - Every Ask source link and the facts behind each answer were checked against the live NHS, AAP and NIH pages before writing (several guessed NHS addresses were 404s and were replaced with the real ones). The medicine list recognises common Indian brand names (Crocin, Dolo 650, Combiflam, Cetzine…) because the learner's users are in India.
 - The visit parser treats any sentence with "do not / don't / never / avoid / stop" as advice, never as a medicine — the first run turned "Do not give any cough syrup at this age" into a medicine to give. A regression test pins it.
 - Medicine reminders start from the next dose still ahead, so a 30-day course gets 30 reminders even when the visit ends after the morning dose; "Set reminders" also downloads an .ics file, because a browser cannot ring an alarm while it is closed. (The download itself was not clicked in the build browser; the .ics content is unit-tested.)
+- Scope change at the learner's request: the four Little Signs checks deferred in the PRD were built (slice 11), and scope, PRD and spec were updated to match.
+- Food patterns use the most recent time each food was eaten before a reaction — the first version counted an older meal and missed egg eaten 30 minutes before hives.

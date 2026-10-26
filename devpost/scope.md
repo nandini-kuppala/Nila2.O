@@ -66,13 +66,14 @@ anyone is woken.
 - Timeline and Insights built from what was actually recorded.
 - The rest of the learner's screens (Watch, Ask, Doctor, Health, Little Signs,
   Babyproof), each doing one honest thing in the browser, so the demo matches
-  their design.
+  their design. Little Signs covers the skin diary, nappy colour, eye flash,
+  yellow check, and food and reactions (the last four added at the learner's
+  request after the first build; see `checklist.md > Revisions`).
 - Everything stored on the device. No account, no server.
 
 ## Later
 - A trained cry detector (e.g. an audio-event model) in place of the pitch-and-loudness rule.
 - Family CCTV (RTSP) streams on the Watch screen.
-- Eye-flash, nappy-colour, yellow-skin and food checks in Little Signs.
 - Scanning a medicine strip with the camera (OCR).
 - An Android wrapper with a foreground service so it survives the screen locking.
 

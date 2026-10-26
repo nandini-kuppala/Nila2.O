@@ -3,8 +3,8 @@
 // in-memory map stands in with the same interface.
 
 const DB_NAME = 'nila';
-const DB_VERSION = 2;
-const STORES = ['kv', 'events', 'blobs', 'visits', 'records', 'spots', 'rooms'];
+const DB_VERSION = 3;
+const STORES = ['kv', 'events', 'blobs', 'visits', 'records', 'spots', 'rooms', 'checks'];
 
 const listeners = new Set();
 export function onChange(fn) {

@@ -72,7 +72,7 @@ stand-in scene through the safety watch.
 | Timeline · Insights | One entry per cry with its steps and recording; filters for today, yesterday, 7 and 30 days; the week's crying against the 3-hour colic line; what settles her; how cries ended; when she cries. |
 | **Ask** | A curated set of answers with sources (NHS, AAP, NIH), a "Worth knowing" warning on each, an honest "no sourced answer" when nothing matches, and "When did she last feed?" answered from the log. **Check a medicine** gives a breastfeeding verdict for 25 common medicines, including Indian brands (Crocin, Dolo 650, Combiflam…). |
 | **Watch** | The camera with a safe zone you drag to draw. Movement outside it raises an urgent alert; the whole view jumping raises "the phone was moved". Optional person detection, a ring-light flash and a lullaby on alerts. **Babyproof a room**: one photo, objects detected in the browser, numbered pins and "Fix these" cards with sources, plus a checklist for what no camera can see. |
-| **Health** | Baby and mother records (vaccinations, check-ups, prescriptions, growth) with photos. **Little Signs → Skin diary**: a photo every few days with a circle around the mark, a size trend, and "Doctor this week" when it grows by half within four days. |
+| **Health** | Baby and mother records (vaccinations, check-ups, prescriptions, growth) with photos. **Little Signs**, five checks with sourced next steps: **Skin diary** (a photo every few days with a circle around the mark; "Doctor this week" when it grows by half within four days), **Nappy colour** (a stool colour card; pale poo means a doctor today), **Eye flash** (tap the pupils in a flash photo; a white glow means show a doctor), **Yellow check** (newborn jaundice questions in the NHS order of urgency), and **Food and reactions** (links each reaction to what she ate in the 2 hours, or 3 days, before, and flags the food). |
 | **Doctor** | Dictate the visit (browser speech recognition, English, Hindi, Tamil, Telugu) or type it. Nila writes down medicines with amounts and times, dates, what was given today and the advice, in the doctor's words. **Set reminders** saves them to Nila's calendar and downloads an `.ics` file for the phone's calendar. |
 
 ## Run it locally
@@ -89,9 +89,9 @@ Open http://localhost:5173. The microphone and camera need `localhost` or HTTPS.
 npm test
 ```
 
-51 tests cover the cry detector, the ladder and its verdicts, sound choice, the reason
+58 tests cover the cry detector, the ladder and its verdicts, sound choice, the reason
 guess, the summaries, the sample week, the movement tracker, search, the medicine
-lookup, the visit parser and calendar file, and the skin-diary rules.
+lookup, the visit parser and calendar file, the skin-diary rules, and the Little Signs checks (stool shades, the red reflex, jaundice urgency, food patterns).
 
 ## How it works
 

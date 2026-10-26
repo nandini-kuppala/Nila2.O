@@ -64,6 +64,8 @@ five tabs: **Monitor · Ask · Watch · Health · Doctor**.
   "Fix these" cards with what to do and a source, Mark done.
 - **Health** (tab): Baby / Mother toggle, records grouped by type, add a record, and a
   **Little Signs** card leading to the skin diary.
+- **Little Signs**: five checks: Skin diary, Nappy colour, Eye flash, Yellow check,
+  Food and reactions.
 - **Little Signs → Skin diary**: tracked spots, add today's photo, size trend.
 - **Doctor** (tab): "At the doctor's", record or type the visit, sample visits,
   Calendar, visit notes with medicines, dates and reminders.
@@ -170,6 +172,23 @@ Source: `scope.md > The Unique Kernel`, `scope.md > What "Working" Looks Like`.
 - [ ] A trend shows the spot's size over time; growing by half within a few days shows
       "Doctor this week".
 
+### Little Signs: four more checks
+Added at the learner's request after the first build (`checklist.md > Revisions`).
+Each check says what to do next (fine / check again / show a doctor / doctor today /
+get help now), cites its NHS source, and never diagnoses.
+- [ ] **Nappy colour**: pick the closest shade on a stool colour card, or tap the poo in
+      a photo for a suggestion; pale shades → doctor today; black after the first days or
+      red → talk to a doctor; saving also logs a nappy change.
+- [ ] **Eye flash**: a flash photo, tap both pupils; a white or yellow glow in either →
+      show a doctor; no reflex caught → retake; drawn samples to try it without a photo.
+- [ ] **Yellow check**: guided questions for newborn jaundice (yellow skin or eyes, dark
+      pee, pale poo, born early, danger signs) answered in the NHS order: danger signs or
+      yellow in the first 24 h → get help now; pale poo or dark pee → doctor today;
+      yellow past 2 weeks (3 if premature) → doctor.
+- [ ] **Food and reactions**: log foods and reactions; each reaction is linked to foods
+      eaten in the 2 hours (or 3 days) before; a food with a quick reaction is flagged
+      "stop and talk to your doctor"; swelling or breathing trouble → emergency card.
+
 ## States and Boundaries
 - **First use** — welcome asks for the baby's name and birth date; everything else is empty
   with a line saying what will appear.
@@ -196,7 +215,6 @@ working end to end first.
 
 ## Deferred From the POC
 - Family CCTV streams: browsers cannot open RTSP cameras directly.
-- Eye flash, nappy colour, yellow check, food diary in Little Signs.
 - Photographing a medicine strip (OCR).
 - Background listening with the screen locked (needs a native wrapper).
 

@@ -178,6 +178,15 @@ medicines with amount/frequency/condition, dated items, advice), `js/data/sample
 `js/screens/health.js`, `js/screens/signs.js`. PRD ref: `prd.md > Health records`,
 `prd.md > Little Signs: skin diary`.
 
+### Little Signs checks
+`js/screens/checks.js` (routes `#/nappy`, `#/eye`, `#/yellow`, `#/food`) and
+`js/lib/little-signs.js` (pure, tested): `nearestStool` (CIE Lab distance to the card
+shades) and `stoolVerdict`; `pupilKind` (redness and brightness of the brighter half of
+a small disc around each tap) and `eyeVerdict`; `yellowVerdict` (NHS order of urgency);
+`foodPatterns` (most recent eating of each food before a reaction: ≤ 2 h quick,
+≤ 3 days slow). Records go to the `checks` store.
+PRD ref: `prd.md > Little Signs: four more checks`.
+
 ### Settings
 `js/screens/settings.js`. Baby details, record your voice, demo speed, sample data,
 clear all.
@@ -195,6 +204,7 @@ All in IndexedDB on this device; survives reloads; removed only by **Clear every
 - `records` — `{id, who:'baby'|'mother', kind, date, title, notes, photoId?}`.
 - `spots` — `{id, name, area, entries:[{t, photoId, circle:{x,y,r}, sizePct}]}`.
 - `rooms` — `{id, title, photoId, hazards:[{cls, name, severity, fix, source, boxes}], seen, done}`.
+- `checks` — `{id, t, type:'nappy'|'eye'|'yellow'|'food'|'reaction', level?, …, sample?}`.
 
 ## File Structure
 ```
