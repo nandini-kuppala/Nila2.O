@@ -89,7 +89,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Open the sample 4-month check-up and press Set reminders.
   Commit: `Doctor: the visit written down, with reminders`
 
-- [ ] **9. Health records and the skin diary**
+- [x] **9. Health records and the skin diary**
   Becomes usable: Add baby/mother records; track a skin spot with daily photos and a size trend.
   Why now: Last screens of the learner's design.
   PRD ref: `prd.md > Health records`, `prd.md > Little Signs: skin diary`
