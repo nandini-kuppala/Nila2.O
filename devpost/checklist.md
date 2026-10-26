@@ -69,7 +69,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Photograph a room at home and read the cards.
   Commit: `Babyproof a room from one photo`
 
-- [ ] **7. Ask, with sources, and a medicine check**
+- [x] **7. Ask, with sources, and a medicine check**
   Becomes usable: Ask a question and get a sourced answer; check a medicine for breastfeeding.
   Why now: Independent of the rest; content-heavy.
   PRD ref: `prd.md > Ask`, `prd.md > Medicine check (for the breastfeeding mother)`
@@ -143,3 +143,4 @@ Activity mode:
 - The demo footage is drawn on each tracker tick rather than on animation frames — browsers pause animation frames for a hidden tab, which froze the scene.
 - Babyproof waits for the photo's load event instead of `img.decode()` — Chrome defers decoding in a hidden tab and the check hung on "Looking at the room…".
 - COCO-SSD on the learner's own test photos found a living room's TV, sofa and chairs but missed a gas stove; the threshold moved from 0.35 to 0.3 (the TV scored 0.36) and the screen now states what the model cannot see. Recorded in `spec.md > Decisions and Open Issues`.
+- Every Ask source link and the facts behind each answer were checked against the live NHS, AAP and NIH pages before writing (several guessed NHS addresses were 404s and were replaced with the real ones). The medicine list recognises common Indian brand names (Crocin, Dolo 650, Combiflam, Cetzine…) because the learner's users are in India.

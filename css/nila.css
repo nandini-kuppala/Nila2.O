@@ -13,6 +13,8 @@ button, input, textarea, select { font: inherit; color: inherit; }
 button { cursor: pointer; }
 a { color: var(--primary); text-decoration: none; }
 img { max-width: 100%; display: block; }
+/* every line icon gets a sensible size unless its container sets one */
+svg[aria-hidden="true"]:not(.ill) { width: 20px; height: 20px; flex: none; vertical-align: -4px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
 /* ---- the phone frame ---------------------------------------------------- */
@@ -369,6 +371,7 @@ textarea.input { min-height: 120px; resize: vertical; }
 .worth b { color: var(--attention); display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
 .sources { margin-top: 12px; }
 .sources a { display: block; font-size: 14px; padding: 4px 0; }
+.sources summary { display: flex; align-items: center; gap: 8px; }
 .verdict { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14.5px; }
 .verdict .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
 .v-safe { color: var(--calm); } .v-check { color: var(--attention); } .v-avoid { color: var(--urgent); }
@@ -408,3 +411,8 @@ textarea.input { min-height: 120px; resize: vertical; }
 
 .text-btn svg, .h-section .right svg { width: 18px; height: 18px; flex: none; }
 .h-section .right { white-space: nowrap; gap: 2px; }
+a.link-row, a.btn { color: var(--text); text-decoration: none; }
+a.btn.primary { color: var(--on-primary); }
+a.btn.tonal { color: var(--on-primary-container); }
+a.btn.outline { color: var(--primary); }
+.suggest button { cursor: pointer; }
