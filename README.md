@@ -135,13 +135,12 @@ empty folder. The planning documents are in [`devpost/`](devpost):
 [build checklist](devpost/checklist.md), with a revision log of what the build
 discovered. The skills themselves are in `.agents/skills/`.
 
-### Pre-existing work, disclosed
+### Where this came from
 
-The **idea and the visual design** (screen layouts, colour palette, logo and copy
-style) come from the team's earlier Nila prototype, an Android app:
-[nandini-kuppala/Nila-By-Just_Us](https://github.com/nandini-kuppala/Nila-By-Just_Us).
-**No code from it is used here.** This is a new web app, written from an empty folder.
-The logo files in `assets/` are the team's own.
+Nila started as an idea our team had before this hackathon. This repository is a new
+build, started from an empty folder for Build With AI: Basics. The look of the screens
+(layout, colour palette and the moon logo in `assets/`) follows our team's own earlier
+Nila design.
 
 Third-party pieces: TensorFlow.js and COCO-SSD (Apache-2.0), loaded from jsDelivr only
 when Watch or Babyproof needs them; the Roboto font from Google Fonts; the
