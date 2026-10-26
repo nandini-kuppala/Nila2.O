@@ -9,7 +9,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
 
 ## Slices
 
-- [ ] **1. A demo cry climbs the ladder and gets judged**
+- [x] **1. A demo cry climbs the ladder and gets judged**
   Becomes usable: Open the app, press Try a demo cry, and watch Heard → Soothe → Check → Wake you fill in live, with a sound playing, a measured Helped/Didn't help, and a full-screen wake alert when nothing helped.
   Why now: This is the kernel. Everything else is around it, so it has to work first; scaffold, tokens, store and shell are bootstrapped inside it.
   PRD ref: `prd.md > The Core Journey` (steps 1, 3–9, 11), `prd.md > Cry ladder`, `prd.md > Demo cry`
@@ -131,3 +131,8 @@ Reflection:
 Activity mode:
 
 ## Revisions
+
+- The ear hears Nila's own sounds in the demo at about -18 dB under the cry, not at full level — at equal level the humming masked the cry and a sound that had not helped was judged "helped" (60% drop). A phone speaker at bedside volume is far quieter than a crying baby at the cot, so this is also the realistic mix.
+- A sound that seemed to help but is followed by hard crying at the wake rung is revised to "didn't help, then crying came back" and its record corrected — the first browser run woke a parent while still listing humming as "helped".
+- A sound still playing at the wake rung is judged before the wake — at 3× demo speed its turn ended a few milliseconds after the rung and it was never judged.
+- The 3-minute cap no longer silences an unanswered wake alarm, and the demo stops after one cry — a still-crying demo baby started a second, bogus episode after the cap.

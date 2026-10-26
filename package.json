@@ -1,0 +1,15 @@
+{
+  "name": "nila",
+  "version": "0.1.0",
+  "description": "A baby monitor in the browser: it hears a cry, tries to settle the baby, checks whether that worked, and only then wakes a parent.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

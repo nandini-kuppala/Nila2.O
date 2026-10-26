@@ -1,0 +1,105 @@
+/* Nila's palette, carried over from the learner's own design.
+ *
+ * Teal carries the brand. Amber and red are reserved for severity and never used
+ * as decoration, so that a red card still means something at three in the
+ * morning. Plum is crying: the subject of the app, not an alarm.
+ */
+:root {
+  color-scheme: light;
+
+  --page: #F7FAF8;
+  --card: #FFFFFF;
+  --card-2: #F2F6F4;
+  --outline: #DCE5E1;
+  --outline-strong: #BFCBC6;
+  --text: #191C1B;
+  --muted: #5C6B67;
+  --faint: #8A8F8D;
+
+  --primary: #0F6B60;
+  --on-primary: #FFFFFF;
+  --primary-container: #E3F2EE;
+  --on-primary-container: #0F6B60;
+  --button-fill: #0F6B60;
+
+  --teal-bg: #E3F2EE;   --teal-ink: #0F6B60;
+  --peach-bg: #FDEEE2;  --peach-ink: #B85C1E;
+  --blue-bg: #E8EEFB;   --blue-ink: #3F5FB8;
+  --plum-bg: #F3E9F6;   --plum-ink: #7B4B86;
+  --pink-bg: #FCE9EE;   --pink-ink: #C0405F;
+  --slate-bg: #EEF2F4;  --slate-ink: #4F5F69;
+
+  --attention: #A96A12; --attention-bg: #FBEEDA;
+  --urgent: #B3261E;    --urgent-bg: #FBE9E7;  --urgent-line: #E7A39E;
+  --calm: #2E6B4F;      --calm-bg: #E1F0E8;
+  --on-severity: #1A1C1B;
+
+  --chart-cry: #7B4B86;
+  --chart-cry-soft: #D8C3DE;
+  --chart-sleep: #3A63A0;
+  --chart-feed: #0F6B60;
+  --chart-grid: #E1E7E4;
+
+  --zone: #3DDBB0;
+  --scrim: rgba(10, 20, 18, 0.45);
+  --shadow: 0 1px 2px rgba(16, 40, 34, 0.06);
+
+  /* illustration inks: the same in both themes */
+  --ill-skin: #F7CDB0;
+  --ill-skin-shade: #EDB495;
+  --ill-hair: #8C5A43;
+  --ill-cheek: #F29C9C;
+  --ill-feature: #5A3B33;
+  --ill-blanket: #B9E2D7;
+  --ill-blanket-shade: #94CFC0;
+  --ill-wood: #E9D9C5;
+  --ill-wood-shade: #D9C3A8;
+  --ill-heart: #EF7A93;
+  --ill-spark: #6CC3B2;
+  --ill-ground: #E5F3EF;
+  --ill-bubble: #FFD9B8;
+  --ill-bubble-ink: #C0662A;
+}
+
+/* Night mode: deep, desaturated grounds. A pale card on a black screen is a
+ * torch in a dark nursery. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page: #101413;
+  --card: #1A201E;
+  --card-2: #212826;
+  --outline: #2C3633;
+  --outline-strong: #414D49;
+  --text: #E8EAE9;
+  --muted: #A7B4AF;
+  --faint: #7C8783;
+
+  --primary: #7FD6C5;
+  --on-primary: #FFFFFF;
+  --primary-container: #16302B;
+  --on-primary-container: #7FD6C5;
+  --button-fill: #1B7A6C;
+
+  --teal-bg: #16302B;   --teal-ink: #7FD6C5;
+  --peach-bg: #3A2618;  --peach-ink: #F2B98E;
+  --blue-bg: #1C2540;   --blue-ink: #AFC3F5;
+  --plum-bg: #2E2133;   --plum-ink: #D9AEE4;
+  --pink-bg: #3A1E26;   --pink-ink: #F2A7B9;
+  --slate-bg: #222A2E;  --slate-ink: #B8C6CE;
+
+  --attention: #F5C066; --attention-bg: #3A2A0C;
+  --urgent: #F2B8B5;    --urgent-bg: #3D1512;  --urgent-line: #6E2A25;
+  --calm: #7ED3A8;      --calm-bg: #11291D;
+  --on-severity: #E8EAE9;
+
+  --chart-cry: #D9AEE4;
+  --chart-cry-soft: #5A4560;
+  --chart-sleep: #A8C8E8;
+  --chart-feed: #6FDBC9;
+  --chart-grid: #2C3633;
+
+  --scrim: rgba(0, 0, 0, 0.6);
+  --shadow: none;
+  --ill-ground: #1C302B;
+}
