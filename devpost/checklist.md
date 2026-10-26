@@ -49,7 +49,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Open Timeline after a demo cry, expand it, and play the recording; open Insights and add the sample week.
   Commit: `Timeline and Insights from what was actually recorded`
 
-- [ ] **5. Safety watch with a safe zone**
+- [x] **5. Safety watch with a safe zone**
   Becomes usable: Start the camera, drag a safe zone, move outside it and get an urgent alert with lights and sound; demo footage runs the same tracker.
   Why now: Second pillar of the learner's design ("watches her").
   PRD ref: `prd.md > Safety watch`
@@ -138,3 +138,6 @@ Activity mode:
 - The 3-minute cap no longer silences an unanswered wake alarm, and the demo stops after one cry — a still-crying demo baby started a second, bogus episode after the cap.
 - The microphone path is exercised by the unit-tested detector and by the same analyser the demo uses; a live microphone run in the build browser was not done, because the permission prompt belongs to the learner. It is in the learner's final checkpoint instead.
 - Quick log gained "Log an earlier time" — with only one-tap "now" logging, the reason guess could never say "probably hungry" in a demo, because the last feed would always be minutes old.
+- The safety watch tracks frame-to-frame movement instead of a learned empty-scene background — with a background, the spot she had just left pulled the "where is she" point back toward the middle.
+- Zone alerts remember where she was last seen through still frames, and need two sightings outside — movement is intermittent, and every still frame was resetting the timer so the demo never alerted.
+- The demo footage is drawn on each tracker tick rather than on animation frames — browsers pause animation frames for a hidden tab, which froze the scene.
