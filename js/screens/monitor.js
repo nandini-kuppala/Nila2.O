@@ -42,7 +42,7 @@ export async function render(root) {
       triedKey = tk;
       renderTried(s);
     }
-    const rk = s.last && !live ? s.last.id : '';
+    const rk = live ? `live:${live.reason?.headline || ''}` : s.last ? s.last.id : '';
     if (rk !== resultKey) {
       resultKey = rk;
       renderResult(s);
@@ -260,8 +260,18 @@ function outcomeText(e) {
 function renderResult(s) {
   const el = $('#m-result');
   if (!el) return;
+  if (s.live) {
+    const r = s.live.reason;
+    el.innerHTML = r ? str(html`
+      <section class="card result-card">
+        <div class="overline">Best guess</div>
+        <div class="big">${r.headline}.</div>
+        <p class="muted" style="margin:0">${r.detail}</p>
+      </section>`) : '';
+    return;
+  }
   const e = s.last;
-  if (!e || s.live) {
+  if (!e) {
     el.innerHTML = '';
     return;
   }

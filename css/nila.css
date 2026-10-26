@@ -405,3 +405,6 @@ textarea.input { min-height: 120px; resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.text-btn svg, .h-section .right svg { width: 18px; height: 18px; flex: none; }
+.h-section .right { white-space: nowrap; gap: 2px; }

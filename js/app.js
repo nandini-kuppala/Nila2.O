@@ -2,7 +2,16 @@
 
 import * as store from './store.js';
 import { icon } from './icons.js';
-import { html, str, $ } from './ui.js';
+import { html, str, $, ageInMonths } from './ui.js';
+import { setReasonProvider } from './monitor/audio-engine.js';
+import { guessReason } from './monitor/reason.js';
+import { logState } from './lib/summaries.js';
+
+// The "probably hungry" guess comes from the quick log, never from the sound.
+setReasonProvider(async () => {
+  const s = await store.settings();
+  return guessReason(logState(await store.events()), Date.now(), ageInMonths(s.birthDate));
+});
 
 const TABS = [
   { id: 'monitor', label: 'Monitor', icon: 'ear' },

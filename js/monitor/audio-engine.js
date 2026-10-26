@@ -128,6 +128,7 @@ function view(ep, now) {
     soundAt: ep.sound ? ep.soundStart - ep.start : null,
     helping: ep.helping,
     woke: ep.woke,
+    reason: ep.reason || null,
     demo: state.mode === 'demo',
   };
 }
@@ -137,6 +138,8 @@ function handle(actions, now) {
     if (a.type === 'start') {
       episodeWall = Date.now();
       startRecording();
+      const ep = ladder.episode;
+      reasonProvider().then((r) => { if (ep) ep.reason = r; }).catch(() => {});
     } else if (a.type === 'soothe') {
       current?.stop();
       current = playSound(ctx, a.soundId, soundBus, { voiceBuffer });

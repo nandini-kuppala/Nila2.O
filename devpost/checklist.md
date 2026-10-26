@@ -29,7 +29,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Run the settling demo twice and see that the second run plays humming first.
   Commit: `Listen on the microphone and remember which sound settles her`
 
-- [ ] **3. Quick log and a best guess at why**
+- [x] **3. Quick log and a best guess at why**
   Becomes usable: Feed, Nappy and Sleep tiles log in one tap; the reason card says "probably hungry" (or can't tell) from the log, labelled as a guess; the wake alert carries it.
   Why now: It completes the Monitor screen and feeds the alert.
   PRD ref: `prd.md > Quick log and reason guess`
@@ -137,3 +137,4 @@ Activity mode:
 - A sound still playing at the wake rung is judged before the wake — at 3× demo speed its turn ended a few milliseconds after the rung and it was never judged.
 - The 3-minute cap no longer silences an unanswered wake alarm, and the demo stops after one cry — a still-crying demo baby started a second, bogus episode after the cap.
 - The microphone path is exercised by the unit-tested detector and by the same analyser the demo uses; a live microphone run in the build browser was not done, because the permission prompt belongs to the learner. It is in the learner's final checkpoint instead.
+- Quick log gained "Log an earlier time" — with only one-tap "now" logging, the reason guess could never say "probably hungry" in a demo, because the last feed would always be minutes old.
