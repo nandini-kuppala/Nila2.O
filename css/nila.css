@@ -416,3 +416,4 @@ a.btn.primary { color: var(--on-primary); }
 a.btn.tonal { color: var(--on-primary-container); }
 a.btn.outline { color: var(--primary); }
 .suggest button { cursor: pointer; }
+.tried-row .grow, .setting-row .grow, .alert-row .grow, .next-card .grow, .link-row .grow, .option .grow { flex: 1; min-width: 0; }

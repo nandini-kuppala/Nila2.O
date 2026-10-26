@@ -99,7 +99,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Add a vaccination record and a spot photo.
   Commit: `Health records and a skin diary`
 
-- [ ] **10. Ready to share**
+- [x] **10. Ready to share**
   Becomes usable: Night mode everywhere, installable manifest, README with run steps and disclosure, MIT licence, live on GitHub Pages.
   Why now: Submission needs the repo and a link.
   PRD ref: `prd.md > Look and Feel`, `prd.md > States and Boundaries`
@@ -111,24 +111,24 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
 
 ## Hands-on Checkpoints
 
-- [ ] Early usable behavior explored — after slice 2 (the learner runs the demo twice)
-- [ ] Final kick-the-tires exploration and feedback completed
+- [ ] Early usable behavior explored — after slice 2 (the learner runs the demo twice). Not done live: the learner asked the agent to build without pausing; the agent ran the demo twice in the build browser instead (white noise then humming, then humming first).
+- [ ] Final kick-the-tires exploration and feedback completed — for the learner, before submitting: run both demo cries, a real cry near the microphone (e.g. a cry video played from another phone), the Watch on the laptop camera, a sample doctor's visit.
 
 ## Final Review
 
-- [ ] Final review complete — feedback resolved and learner confirms ready to ship
+- [ ] Final review complete — feedback resolved and learner confirms ready to ship (waiting on the learner's own run-through above)
 
 ## Code Tour and App Map
 
-- [ ] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
+- [x] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
 - [ ] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
-- [ ] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
+- [x] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
 
-Activity and evidence:
-Route and stops:
-Edit outcome:
-Reflection:
-Activity mode:
+Activity and evidence: brief recap, not hands-on — the learner asked the agent to work end to end. The recap points at the ladder as a pure, tested state machine and the two bugs its tests caught (`tests/ladder.test.mjs`, Revisions above).
+Route and stops: reference route only (not toured) — `js/screens/monitor.js` chooseDemo → `js/monitor/audio-engine.js` startDemo/begin → `js/monitor/ladder.js` createLadder.tick/judgeSound/chooseSound → `audio-engine.js` handle/finish → `js/store.js` addEvent.
+Edit outcome: not offered yet (learner not present).
+Reflection: not offered yet.
+Activity mode: recap; `devpost/app-map.html` is the take-home map.
 
 ## Revisions
 

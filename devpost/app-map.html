@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nila app map</title>
+<style>
+  :root { --page:#F7FAF8; --card:#fff; --line:#DCE5E1; --text:#191C1B; --muted:#5C6B67; --teal:#0F6B60; --teal-bg:#E3F2EE; --plum:#7B4B86; --plum-bg:#F3E9F6; --peach:#B85C1E; --peach-bg:#FDEEE2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page:#101413; --card:#1A201E; --line:#2C3633; --text:#E8EAE9; --muted:#A7B4AF; --teal:#7FD6C5; --teal-bg:#16302B; --plum:#D9AEE4; --plum-bg:#2E2133; --peach:#F2B98E; --peach-bg:#3A2618; } }
+  body { margin:0; background:var(--page); color:var(--text); font:16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:860px; margin:0 auto; padding:28px 16px 48px; }
+  h1 { font-size:30px; margin:0 0 6px; } h2 { font-size:21px; margin:32px 0 10px; }
+  p { margin:0 0 12px; } .muted { color:var(--muted); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px 18px; margin:12px 0; }
+  code { background:var(--teal-bg); color:var(--teal); padding:1px 6px; border-radius:6px; font-size:14px; }
+  ol.route > li { margin:0 0 14px; }
+  details summary { cursor:pointer; font-weight:600; }
+  svg { width:100%; height:auto; display:block; }
+  svg text { font:13px system-ui, sans-serif; fill:var(--text); }
+  svg .box { fill:var(--card); stroke:var(--line); stroke-width:1.5; }
+  svg .k { fill:var(--teal-bg); stroke:var(--teal); stroke-width:1.5; }
+  svg .p { fill:var(--plum-bg); stroke:var(--plum); stroke-width:1.5; }
+  svg .s { fill:var(--peach-bg); stroke:var(--peach); stroke-width:1.5; }
+  svg .arrow { stroke:var(--muted); stroke-width:1.5; fill:none; marker-end:url(#a); }
+  svg .small { font-size:11.5px; fill:var(--muted); }
+  table { border-collapse:collapse; width:100%; font-size:15px; } td, th { text-align:left; padding:8px 6px; border-top:1px solid var(--line); vertical-align:top; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Nila — app map</h1>
+  <p class="muted">A take-home guide to the code: what the pieces are, where one action travels, and where to start a change. A snapshot of the code at the commit that added it; the code can drift after that.</p>
+
+  <h2>The app in one paragraph</h2>
+  <div class="card">
+    <p>Nila is one static web page that behaves like a phone app. The <b>ear</b> turns sound into "how much of the last three seconds was crying". The <b>ladder</b> decides what happens next (play a sound, judge it, wake a parent). The <b>engine</b> does the audio, and the <b>screens</b> draw it. Everything Nila remembers lives in the browser's IndexedDB on the device. Watch, Babyproof, Ask, Doctor and Health are separate screens built around the same store.</p>
+  </div>
+
+  <h2>One action: a demo cry, end to end</h2>
+  <div class="card">
+    <svg viewBox="0 0 820 300" role="img" aria-label="A demo cry flows from the Monitor button through the engine, the ear and the ladder, back to the screen and into storage">
+      <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor" style="fill:var(--muted)"/></marker></defs>
+      <rect class="box" x="10" y="20" width="170" height="70" rx="12"/><text x="24" y="48">Monitor screen</text><text class="small" x="24" y="68">js/screens/monitor.js</text><text class="small" x="24" y="82">"Try a demo cry"</text>
+      <rect class="p" x="230" y="20" width="170" height="70" rx="12"/><text x="244" y="48">Engine</text><text class="small" x="244" y="68">js/monitor/audio-engine.js</text><text class="small" x="244" y="82">startDemo() → 20×/s loop</text>
+      <rect class="k" x="450" y="20" width="160" height="70" rx="12"/><text x="464" y="48">Ear</text><text class="small" x="464" y="68">js/monitor/detector.js</text><text class="small" x="464" y="82">analyseFrame()</text>
+      <rect class="k" x="650" y="20" width="160" height="70" rx="12"/><text x="664" y="48">Ladder</text><text class="small" x="664" y="68">js/monitor/ladder.js</text><text class="small" x="664" y="82">tick() → actions</text>
+      <rect class="s" x="650" y="170" width="160" height="70" rx="12"/><text x="664" y="198">Sounds · alert</text><text class="small" x="664" y="218">sounds.js · alert.js</text><text class="small" x="664" y="232">soothe / wake</text>
+      <rect class="box" x="400" y="170" width="200" height="70" rx="12"/><text x="414" y="198">Store (IndexedDB)</text><text class="small" x="414" y="218">js/store.js</text><text class="small" x="414" y="232">addEvent, recordSoundResult</text>
+      <rect class="box" x="10" y="170" width="300" height="70" rx="12"/><text x="24" y="198">What you see</text><text class="small" x="24" y="218">ladder, "What Nila tried", result card,</text><text class="small" x="24" y="232">Timeline and Insights</text>
+      <path class="arrow" d="M180 55H226"/><path class="arrow" d="M400 55H446"/><path class="arrow" d="M610 55H646"/>
+      <path class="arrow" d="M730 90V166"/><path class="arrow" d="M650 205H604"/><path class="arrow" d="M400 205H314"/>
+      <path class="arrow" d="M690 90C690 140 300 120 230 166"/>
+      <text class="small" x="300" y="130">live state each tick</text>
+    </svg>
+    <p class="muted" style="margin:8px 0 0">A synthesized cry plays into the same analyser a microphone would feed. Each tick the ear scores the sound, the ladder turns that into actions, the engine carries them out, and the screen redraws. When the episode closes, it is saved and the Timeline reads it back.</p>
+  </div>
+
+  <h2>A route through the code <span class="muted" style="font-size:15px;font-weight:400">(reference route)</span></h2>
+  <ol class="route">
+    <li><b>Where the press goes in.</b> <code>js/screens/monitor.js</code>, search <code>chooseDemo</code>: the sheet's buttons call <code>engine.startDemo('settles')</code>. In <code>js/monitor/audio-engine.js</code>, <code>startDemo</code> wires the demo cry into the analyser, and <code>begin</code> starts the 50 ms loop.</li>
+    <li><b>Where the decision is made.</b> <code>js/monitor/ladder.js</code>, <code>createLadder → tick</code>. Rung by rung: quiet for 10 s closes the episode; a sound's turn ends with <code>judgeSound</code> (before vs. last 15 s, 60% drop = helped); 1:30 wakes; 0:20 plays the first sound from <code>chooseSound</code>. This file has no audio or screen code, which is why <code>tests/ladder.test.mjs</code> can drive it directly.</li>
+    <li><b>Where it becomes visible and remembered.</b> Back in <code>audio-engine.js</code>, <code>handle</code> plays sounds, records each verdict with <code>store.recordSoundResult</code>, and <code>finish</code> saves the episode with <code>store.addEvent</code>. <code>monitor.js</code> redraws the ladder (<code>renderStatus</code>) and the rows (<code>renderTried</code>); <code>js/screens/timeline.js</code> shows it the next morning.</li>
+  </ol>
+
+  <h2>To change this, start here</h2>
+  <table>
+    <tr><th>You want to…</th><th>Start in</th></tr>
+    <tr><td>Change when Nila soothes or wakes (0:20, 0:55, 1:30)</td><td><code>TIMINGS</code> in <code>js/monitor/ladder.js</code>, then run <code>npm test</code></td></tr>
+    <tr><td>Make "helped" stricter or looser</td><td><code>helpedDrop</code> in the same <code>TIMINGS</code></td></tr>
+    <tr><td>Add a soothing sound</td><td><code>SOUNDS</code> and <code>playSound</code> in <code>js/monitor/sounds.js</code>, and the <code>available</code> list in <code>audio-engine.js</code></td></tr>
+    <tr><td>Tune what counts as a cry</td><td><code>DETECTOR</code> in <code>js/monitor/detector.js</code>; <code>tests/detector.test.mjs</code> checks white noise and humming stay out</td></tr>
+    <tr><td>Add an Ask answer</td><td><code>js/data/answers.js</code> (with a source), then <code>tests/search.test.mjs</code></td></tr>
+    <tr><td>Change the colours</td><td><code>css/tokens.css</code> (light and night)</td></tr>
+  </table>
+
+  <h2>A practice to reuse</h2>
+  <div class="card">
+    <p><b>Put the decision in a pure function, and test it with a scripted night.</b> The ladder never touches audio or the screen; it is fed numbers and the time and answers with actions. That is what let <code>tests/ladder.test.mjs</code> catch two real bugs before the browser did. One was a sound still playing at the wake rung that was never judged (at 3× demo speed its turn ended a few milliseconds late). The other was a sound marked "helped" that was followed by hard crying. Both are now regression tests (see <code>devpost/checklist.md → Revisions</code>).</p>
+    <p class="muted" style="margin:0">On the next project: when a feature has a clock and a judgement in it, write the judgement as a function of (readings, time) first, and drive it with a scripted scenario before wiring any device API to it.</p>
+  </div>
+
+  <h2>Run it again</h2>
+  <div class="card">
+    <p><code>npm start</code>, then open <code>http://localhost:5173</code>. Tests: <code>npm test</code>. No install step, Node 18+.</p>
+    <details><summary>Where everything else lives</summary>
+      <p class="muted" style="margin:8px 0 0">Watch: <code>js/screens/watch.js</code> + <code>js/watch/tracker.js</code>. Babyproof: <code>js/screens/babyproof.js</code> + <code>js/data/hazards.js</code>. Ask: <code>js/screens/ask.js</code>, <code>js/lib/search.js</code>, <code>js/data/answers.js</code>, <code>js/data/medicines.js</code>. Doctor: <code>js/screens/doctor.js</code>, <code>visit.js</code>, <code>js/lib/visit-parser.js</code>, <code>js/lib/ics.js</code>. Health: <code>js/screens/health.js</code>, <code>signs.js</code>, <code>js/lib/spots.js</code>. Shell and routes: <code>js/app.js</code>.</p>
+    </details>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "Nila — baby monitor",
+  "short_name": "Nila",
+  "description": "Hears a cry, tries to settle her, checks whether that worked, and only then wakes you. Everything stays on this device.",
+  "start_url": "./#/monitor",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F7FAF8",
+  "theme_color": "#0F6B60",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
