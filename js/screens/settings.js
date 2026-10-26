@@ -83,7 +83,10 @@ export async function render(root) {
       <h2 class="h-section">On this device</h2>
       <section class="card">
         <p class="muted" style="margin-top:0">Everything Nila keeps (cries, recordings, photos, visits, records) is stored in this browser on this device. Nothing is uploaded.</p>
-        ${samples ? html`<button class="btn outline small" data-remove-samples>Remove ${samples} sample entries</button><div style="height:10px"></div>` : ''}
+        ${samples
+          ? html`<button class="btn outline small" data-remove-samples>Remove ${samples} sample entries</button>`
+          : html`<button class="btn tonal small" data-add-samples>Add a sample week</button>`}
+        <div style="height:10px"></div>
         <button class="btn danger small" data-clear>${I('trash')} Clear everything</button>
       </section>
       <p class="small faint" style="text-align:center;margin:20px 0">Nila helps you notice and record. It does not diagnose, and it is not a breathing monitor.</p>`);
@@ -121,6 +124,13 @@ export async function render(root) {
       await store.saveSettings({ demoSpeed: Number(b.dataset.speed) });
       draw();
     }));
+    const add = root.querySelector('[data-add-samples]');
+    if (add) add.onclick = async () => {
+      const { sampleWeek } = await import('../lib/sample-week.js');
+      await store.addEvents(sampleWeek());
+      toast('A sample week was added. It is labelled and can be removed.');
+      draw();
+    };
     const rm = root.querySelector('[data-remove-samples]');
     if (rm) rm.onclick = async () => {
       await store.removeSamples();

@@ -128,6 +128,14 @@ export async function addEvent(e) {
   emit('events');
   return ev;
 }
+/** Many at once (the sample week), with one change notice at the end. */
+export async function addEvents(list) {
+  for (const e of list) {
+    const ev = { id: e.id || newId(), t: e.t || Date.now(), ...e };
+    await db.put('events', ev.id, ev);
+  }
+  emit('events');
+}
 export async function updateEvent(id, patch) {
   const ev = await db.get('events', id);
   if (!ev) return null;

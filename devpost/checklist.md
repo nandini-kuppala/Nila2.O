@@ -39,7 +39,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Tap Feed, then run the "needs you" demo and read the reason on the alert.
   Commit: `Quick log, and a guess at the reason that says it is a guess`
 
-- [ ] **4. Timeline and Insights in the morning**
+- [x] **4. Timeline and Insights in the morning**
   Becomes usable: Timeline with filters, tiles and one entry per cry; Insights with the week, colic line and what settles her; a removable sample week.
   Why now: Closes the core loop (the morning review).
   PRD ref: `prd.md > Timeline`, `prd.md > Insights`
