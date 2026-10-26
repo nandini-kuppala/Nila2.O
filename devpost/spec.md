@@ -194,6 +194,7 @@ All in IndexedDB on this device; survives reloads; removed only by **Clear every
 - `visits` — `{id, title, date, transcript, parsed, reminders}`.
 - `records` — `{id, who:'baby'|'mother', kind, date, title, notes, photoId?}`.
 - `spots` — `{id, name, area, entries:[{t, photoId, circle:{x,y,r}, sizePct}]}`.
+- `rooms` — `{id, title, photoId, hazards:[{cls, name, severity, fix, source, boxes}], seen, done}`.
 
 ## File Structure
 ```
@@ -260,8 +261,11 @@ Nila2.O/
   open a link, and the demo can be recorded on a laptop. Tradeoff: no background
   listening with the screen locked.
 - **Genuine uncertainty:** will in-browser COCO-SSD find enough hazards in a real room
-  photo? Investigation during the build: run it on a test photo with a TV, plant,
-  oven or table and record what it found in the checklist Revisions.
+  photo? Investigated during the build on two of the learner's own room photos: in a
+  living room it found the TV (only 36% sure), the sofa and two chairs; in an Indian
+  kitchen it missed the gas stove entirely and saw only the people. So Babyproof
+  keeps a 0.3 threshold, says plainly what the model can and cannot see, and always
+  shows the general room checklist (sockets, cords, small objects, medicines, windows).
 - Detector thresholds (noise floor + 12 dB, pitch 300–750 Hz, clarity ≥ 0.45) are
   starting values, tuned against the demo cry, humming and white noise in tests.
 - Nothing open from `prd.md > Open Questions`.

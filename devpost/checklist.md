@@ -59,7 +59,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Start the watch, draw a zone, wave a hand outside it.
   Commit: `Safety watch: a safe zone you draw, on this device`
 
-- [ ] **6. Babyproof a room from one photo**
+- [x] **6. Babyproof a room from one photo**
   Becomes usable: Take or upload a room photo, get numbered pins and Fix these cards with sources; Mark done.
   Why now: Uses the same vision loader as Watch.
   PRD ref: `prd.md > Babyproof a room`
@@ -141,3 +141,5 @@ Activity mode:
 - The safety watch tracks frame-to-frame movement instead of a learned empty-scene background — with a background, the spot she had just left pulled the "where is she" point back toward the middle.
 - Zone alerts remember where she was last seen through still frames, and need two sightings outside — movement is intermittent, and every still frame was resetting the timer so the demo never alerted.
 - The demo footage is drawn on each tracker tick rather than on animation frames — browsers pause animation frames for a hidden tab, which froze the scene.
+- Babyproof waits for the photo's load event instead of `img.decode()` — Chrome defers decoding in a hidden tab and the check hung on "Looking at the room…".
+- COCO-SSD on the learner's own test photos found a living room's TV, sofa and chairs but missed a gas stove; the threshold moved from 0.35 to 0.3 (the TV scored 0.36) and the screen now states what the model cannot see. Recorded in `spec.md > Decisions and Open Issues`.
