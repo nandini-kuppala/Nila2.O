@@ -19,7 +19,7 @@ Build mode: fast (the learner asked the agent to build end to end; hands-on chec
   Learner check: Open Monitor, press Try a demo cry → A cry that settles, and watch the ladder; then try A cry that needs you and see the alert.
   Commit: `Cry ladder: hear, soothe, check, wake — with a demo cry`
 
-- [ ] **2. It listens for real and learns which sound works**
+- [x] **2. It listens for real and learns which sound works**
   Becomes usable: Start listening with the microphone; a real cry runs the same ladder; the second demo run starts with the sound that helped last time; Settings can record the parent's voice as a sound.
   Why now: Learning per sound is the second half of the kernel and the "oh, that's cool" moment.
   PRD ref: `prd.md > Learning which sound works`, `prd.md > The Core Journey` (step 2)
@@ -136,3 +136,4 @@ Activity mode:
 - A sound that seemed to help but is followed by hard crying at the wake rung is revised to "didn't help, then crying came back" and its record corrected — the first browser run woke a parent while still listing humming as "helped".
 - A sound still playing at the wake rung is judged before the wake — at 3× demo speed its turn ended a few milliseconds after the rung and it was never judged.
 - The 3-minute cap no longer silences an unanswered wake alarm, and the demo stops after one cry — a still-crying demo baby started a second, bogus episode after the cap.
+- The microphone path is exercised by the unit-tested detector and by the same analyser the demo uses; a live microphone run in the build browser was not done, because the permission prompt belongs to the learner. It is in the learner's final checkpoint instead.
